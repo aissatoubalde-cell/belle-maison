@@ -9,7 +9,7 @@ npm install
 npm run dev
 ```
 
-Ouvrir http://localhost:3000.
+Ouvrir http://localhost:3001 (le port 3001 est fixé dans le script `dev` pour éviter les conflits avec d’autres projets).
 
 ## Structure
 

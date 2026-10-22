@@ -1,0 +1,9 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200' fill='none' stroke='#B8975A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+<line x1='20' y1='170' x2='380' y2='170' stroke='#C4A468'/>
+<path d='M60 170V80l45-30 45 30v90' fill='#F1EEE6'/><path d='M50 86l55-37 55 37'/>
+<g fill='white'><rect x='78' y='95' width='16' height='16'/><rect x='116' y='95' width='16' height='16'/><rect x='78' y='125' width='16' height='16'/><rect x='116' y='125' width='16' height='16'/><rect x='96' y='140' width='18' height='30'/></g>
+<g transform='translate(200 70)'><circle cx='18' cy='18' r='14' fill='#F1EEE6'/><circle cx='18' cy='18' r='5' fill='white'/><path d='M30 26l40 40M58 54l8-8M66 62l8-8'/></g>
+<rect x='285' y='55' width='85' height='100' fill='white'/>
+<path d='M298 75h12M318 75h40M298 97h12M318 97h40M298 119h12M318 119h40M298 141h12M318 141h30'/>
+<path d='M300 73l4 4 7-8M300 95l4 4 7-8M300 117l4 4 7-8'/>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200' fill='none' stroke='#B8975A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+<line x1='20' y1='170' x2='380' y2='170' stroke='#C4A468'/>
+<path d='M60 170V100l50-40 50 40v70' fill='#F1EEE6'/><path d='M50 108l60-48 60 48'/>
+<rect x='95' y='130' width='30' height='40' fill='white'/><rect x='70' y='115' width='18' height='18' fill='white'/><rect x='132' y='115' width='18' height='18' fill='white'/>
+<path d='M79 115v18M70 124h18M141 115v18M132 124h18'/>
+<rect x='200' y='60' width='110' height='110' fill='#F1EEE6'/><path d='M200 60h110'/>
+<g fill='white'><rect x='215' y='75' width='18' height='18'/><rect x='246' y='75' width='18' height='18'/><rect x='277' y='75' width='18' height='18'/><rect x='215' y='105' width='18' height='18'/><rect x='246' y='105' width='18' height='18'/><rect x='277' y='105' width='18' height='18'/><rect x='215' y='135' width='18' height='18'/><rect x='277' y='135' width='18' height='18'/><rect x='246' y='135' width='18' height='35'/></g>
+<path d='M330 170V40h40M330 55h55M370 40v15M340 40l-10 15M362 55v30M356 85h12'/>
+</svg>

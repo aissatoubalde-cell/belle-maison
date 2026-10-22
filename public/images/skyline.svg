@@ -1,0 +1,20 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 320' fill='none' stroke='#C4A468' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+<defs><linearGradient id='g' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#C4A468' stop-opacity='0.28'/><stop offset='1' stop-color='#C4A468' stop-opacity='0.04'/></linearGradient></defs>
+<path d='M0 290h1600' stroke-opacity='0.8'/>
+<g fill='url(#g)'>
+<path d='M40 290V200h60v90zM120 290V150l30-25 30 25v140zM200 290V110h90v180zM320 290V230h50v60zM390 290V170l25-20 25 20v120zM460 290V60h40l10-25 10 25h40v230zM580 290V180h70v110zM670 290V130h60v160zM750 290V90l35-30 35 30v200zM840 290V210h60v80zM920 290V40h30V20h20v20h30v250zM1020 290V160h80v130zM1120 290V120h50v170zM1190 290V200l40-30 40 30v90zM1290 290V140h70v150zM1380 290V220h60v70zM1460 290V170h40V150h30v20h30v120z'/>
+</g>
+<g stroke-opacity='0.9'>
+<path d='M240 110V60h120M240 70h110M350 60v40M270 60l-15 14M330 70v30M324 100h12'/>
+<path d='M1290 140V80h110M1290 90h100M1395 80v45M1320 80l-14 14M1370 90v30M1364 120h12'/>
+</g>
+<g stroke-opacity='0.55'>
+<path d='M215 140h60M215 170h60M215 200h60M215 230h60M215 260h60'/>
+<path d='M475 90h70M475 120h70M475 150h70M475 180h70M475 210h70M475 240h70M475 270h70'/>
+<path d='M935 70h40M935 100h40M935 130h40M935 160h40M935 190h40M935 220h40M935 250h40'/>
+<path d='M1035 180h50M1035 210h50M1035 240h50M1035 270h50'/>
+<path d='M685 150h30M685 180h30M685 210h30M685 240h30M685 270h30'/>
+<path d='M1305 160h40M1305 190h40M1305 220h40M1305 250h40'/>
+</g>
+<g fill='#C4A468' stroke='none' opacity='0.9'><circle cx='140' cy='210' r='2.5'/><circle cx='160' cy='210' r='2.5'/><circle cx='770' cy='140' r='2.5'/><circle cx='800' cy='140' r='2.5'/><circle cx='770' cy='175' r='2.5'/><circle cx='800' cy='175' r='2.5'/><circle cx='1215' cy='230' r='2.5'/><circle cx='1245' cy='230' r='2.5'/><circle cx='1140' cy='150' r='2.5'/><circle cx='1150' cy='180' r='2.5'/><circle cx='1140' cy='210' r='2.5'/></g>
+</svg>

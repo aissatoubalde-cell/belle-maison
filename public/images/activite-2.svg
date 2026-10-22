@@ -1,0 +1,13 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200' fill='none' stroke='#B8975A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+<line x1='20' y1='170' x2='380' y2='170' stroke='#C4A468'/>
+<path d='M40 170L120 80h60l60 90z' fill='#F1EEE6'/>
+<path d='M150 80v18M150 112v18M150 144v18' stroke='white' stroke-width='3'/>
+<path d='M30 120h40M30 100h30' stroke-opacity='0.5'/>
+<g transform='translate(220 50)'>
+<rect x='10' y='70' width='110' height='22' rx='4' fill='#F1EEE6'/>
+<circle cx='30' cy='81' r='7' fill='white'/><circle cx='55' cy='81' r='7' fill='white'/><circle cx='80' cy='81' r='7' fill='white'/><circle cx='105' cy='81' r='7' fill='white'/>
+<rect x='25' y='40' width='55' height='30' fill='#F1EEE6'/><rect x='35' y='46' width='22' height='18' fill='white'/>
+<path d='M80 50l45-40 30 15'/><path d='M155 25l-5 35'/><path d='M150 60l-16 10v18l24 2z' fill='#F1EEE6'/><path d='M100 44l40-18'/>
+</g>
+<path d='M60 60h40v24H60zM80 84v-24' fill='white'/><path d='M66 68l28 8M66 76l28-8'/>
+</svg>

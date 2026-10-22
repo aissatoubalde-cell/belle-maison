@@ -28,32 +28,32 @@ export const missionPoints = [
 
 export const activites = [
   {
-    image: "/images/activite-1.png",
+    image: "/images/activite-1.svg",
     title: "Construction et bâtiment",
     text: "Maisons individuelles et villas, immeubles résidentiels, bâtiments commerciaux, administratifs et industriels ; gros œuvre, second œuvre, finitions, rénovation et projets clés en main.",
   },
   {
-    image: "/images/activite-2.png",
+    image: "/images/activite-2.svg",
     title: "Bâtiment et Travaux Publics",
     text: "Terrassement, génie civil, voiries et routes, ouvrages techniques, drainage et assainissement, réseaux d’adduction d’eau et infrastructures hydrauliques.",
   },
   {
-    image: "/images/activite-3.png",
+    image: "/images/activite-3.svg",
     title: "Développement et promotion immobilière",
     text: "Programmes de logements, résidences, villas et immeubles d’appartements, complexes commerciaux, partenariats fonciers et montage d’opérations.",
   },
   {
-    image: "/images/activite-4.png",
+    image: "/images/activite-4.svg",
     title: "Investissement immobilier",
     text: "Acquisition de maisons, villas et appartements, immeubles résidentiels et commerciaux, achat-vente de biens et constitution de portefeuilles immobiliers.",
   },
   {
-    image: "/images/activite-5.png",
+    image: "/images/activite-5.svg",
     title: "Gestion et valorisation immobilières",
     text: "Gestion locative, administration de propriétés, entretien et maintenance, commercialisation, suivi des revenus locatifs et optimisation des actifs.",
   },
   {
-    image: "/images/activite-6.png",
+    image: "/images/activite-6.svg",
     title: "Ingénierie et partenariats",
     text: "Coopération avec entreprises de génie civil, bureaux d’études, architectes, fournisseurs, investisseurs, banques et promoteurs, des études à la réalisation.",
   },

@@ -26,8 +26,8 @@ Ouvrir http://localhost:3000.
 | --- | --- |
 | `logo.png` | Logo (≈ 150 px de large à l’affichage) |
 | `favicon.png` | Favicon |
-| `skyline.png` | Illustration skyline du hero |
-| `activite-1.png` … `activite-6.png` | Illustrations des 6 activités |
+| `skyline.svg` | Illustration skyline du hero (dessin vectoriel fourni, remplaçable) |
+| `activite-1.svg` … `activite-6.svg` | Illustrations des 6 activités (dessins vectoriels fournis, remplaçables) |
 | `partenaire-fvg.png`, `partenaire-eltg.png`, `partenaire-bvit.png` | Logos partenaires |
 | `qr-contact.svg` | QR code de la carte de contact |
 

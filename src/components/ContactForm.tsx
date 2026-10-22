@@ -7,7 +7,7 @@ import { contactSchema, subjectLabels, type ContactInput } from "@/lib/contact-s
 import { sendContact } from "@/app/actions/contact";
 
 const field =
-  "w-full border border-gold/50 bg-ivory/5 px-4 py-3 text-ivory placeholder:text-mist/60 focus:border-gold focus:outline-none";
+  "w-full border border-ivory/15 bg-navy px-4 py-3 transition-colors text-ivory placeholder:text-mist/60 focus:border-gold focus:outline-none";
 const label = "text-[0.75rem] font-semibold tracking-[0.2em] uppercase text-gold";
 
 export default function ContactForm() {
@@ -50,7 +50,7 @@ export default function ContactForm() {
         </div>
         <div className="flex flex-col gap-1.5">
           <label htmlFor="subject" className={label}>Objet</label>
-          <select id="subject" className={`${field} bg-navy`} {...register("subject")}>
+          <select id="subject" className={field} {...register("subject")}>
             {Object.entries(subjectLabels).map(([value, text]) => (
               <option key={value} value={value}>{text}</option>
             ))}

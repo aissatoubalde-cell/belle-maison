@@ -31,7 +31,7 @@ export function Button({ href, variant = "gold", children }: { href: string; var
     navy: "bg-navy text-ivory hover:text-gold-light px-[22px] py-3",
   }[variant];
   return (
-    <a href={href} className={`inline-block text-[0.9rem] font-semibold tracking-[0.08em] uppercase no-underline transition-colors ${styles}`}>
+    <a href={href} className={`inline-block text-[0.9rem] font-semibold tracking-[0.08em] uppercase no-underline transition-[color,background-color,transform] duration-300 hover:-translate-y-0.5 ${styles}`}>
       {children}
     </a>
   );

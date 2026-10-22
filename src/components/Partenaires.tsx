@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { clients, typesPartenaires } from "@/data/site";
 import { Container, SectionHeader } from "./ui";
+import Reveal from "./Reveal";
 
 export default function Partenaires() {
   return (
@@ -13,8 +14,10 @@ export default function Partenaires() {
         </SectionHeader>
 
         <ul className="m-0 grid list-none gap-4 p-0 [grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr))]">
-          {typesPartenaires.map((t) => (
-            <li key={t} className="border gold-border px-6 py-[22px] font-serif text-[1.25rem]">{t}</li>
+          {typesPartenaires.map((t, i) => (
+            <li key={t}>
+              <Reveal delay={i * 0.06} className="card-hover h-full border gold-border px-6 py-[22px] font-serif text-[1.25rem]">{t}</Reveal>
+            </li>
           ))}
         </ul>
 
@@ -24,8 +27,9 @@ export default function Partenaires() {
             <span className="h-px flex-auto bg-gold/60" />
           </div>
           <div className="grid gap-7 [grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr))]">
-            {clients.map((c) => (
-              <article key={c.name} className="flex flex-col border gold-border">
+            {clients.map((c, i) => (
+              <Reveal key={c.name} delay={i * 0.1}>
+              <article className="card-hover flex h-full flex-col border gold-border">
                 <div className={`flex h-[220px] items-center justify-center overflow-hidden ${c.padded ? "p-6" : ""}`} style={{ background: c.bg }}>
                   <Image src={c.logo} alt={c.alt} width={400} height={220} className="block h-full w-full object-contain" />
                 </div>
@@ -34,6 +38,7 @@ export default function Partenaires() {
                   <div className="text-[0.8rem] font-semibold tracking-[0.15em] text-gold-dark uppercase">{c.tag}</div>
                 </div>
               </article>
+              </Reveal>
             ))}
           </div>
         </div>

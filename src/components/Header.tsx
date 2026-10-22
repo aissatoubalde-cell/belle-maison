@@ -32,11 +32,11 @@ export default function Header() {
           className={`${open ? "flex" : "hidden"} w-full flex-col gap-2 pb-2 text-[0.85rem] font-semibold uppercase tracking-[0.08em] lg:flex lg:w-auto lg:flex-1 lg:flex-row lg:flex-wrap lg:items-center lg:justify-end lg:gap-x-5 lg:gap-y-1 lg:pb-0 lg:text-[0.78rem] xl:flex-nowrap xl:gap-x-6 xl:text-[0.82rem]`}
         >
           {nav.map((item) => (
-            <a key={item.href} href={item.href} onClick={() => setOpen(false)} className="py-2.5 no-underline">
+            <a key={item.href} href={item.href} onClick={() => setOpen(false)} className="nav-link">
               {item.label}
             </a>
           ))}
-          <a href="#contact" onClick={() => setOpen(false)} className="bg-navy px-[22px] py-3 text-center text-ivory no-underline hover:text-gold-light lg:ml-2 lg:whitespace-nowrap lg:px-4">
+          <a href="#contact" onClick={() => setOpen(false)} className="bg-navy px-[22px] py-3 text-center text-ivory no-underline transition-colors hover:bg-gold hover:text-navy lg:ml-2 lg:whitespace-nowrap lg:px-4">
             Nous contacter
           </a>
         </div>

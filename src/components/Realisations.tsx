@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { projetsEnCours, realisations } from "@/data/site";
 import { Container, Eyebrow, SectionHeader, SectionTitle } from "./ui";
+import Reveal from "./Reveal";
+import ProgressBar from "./ProgressBar";
 
 function Placeholder({ label, dark = false }: { label: string; dark?: boolean }) {
   return (
@@ -18,7 +20,8 @@ export default function Realisations() {
 
         <div className="grid gap-8 [grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr))]">
           {realisations.map((r, i) => (
-            <article key={i} className="flex flex-col gap-[18px]">
+            <Reveal key={i} delay={i * 0.1}>
+            <article className="flex flex-col gap-[18px]">
               {r.image ? (
                 <Image src={r.image} alt={r.title} width={800} height={600} className="aspect-[4/3] w-full object-cover" />
               ) : (
@@ -31,6 +34,7 @@ export default function Realisations() {
                 <p className="m-0 text-[0.95rem] text-muted">{r.text}</p>
               </div>
             </article>
+            </Reveal>
           ))}
         </div>
 
@@ -41,7 +45,8 @@ export default function Realisations() {
           </div>
           <div className="grid gap-8 [grid-template-columns:repeat(auto-fit,minmax(min(460px,100%),1fr))]">
             {projetsEnCours.map((p, i) => (
-              <article key={i} className="flex flex-wrap bg-navy text-ivory">
+              <Reveal key={i} delay={i * 0.12}>
+              <article className="card-hover flex h-full flex-wrap border border-transparent bg-navy text-ivory">
                 {p.image ? (
                   <Image src={p.image} alt={p.title} width={440} height={330} className="min-h-[220px] flex-[1_1_220px] object-cover" />
                 ) : (
@@ -54,13 +59,12 @@ export default function Realisations() {
                   <p className="m-0 text-[0.92rem] text-mist">{p.text}</p>
                   <div className="flex flex-col gap-1.5 pt-1.5 text-[0.8rem]">
                     <div className="flex justify-between"><span>Avancement</span><span>{p.progress} %</span></div>
-                    <div className="h-1.5 bg-ivory/18" role="progressbar" aria-valuenow={p.progress} aria-valuemin={0} aria-valuemax={100}>
-                      <div className="h-1.5 bg-gold" style={{ width: `${p.progress}%` }} />
-                    </div>
+                    <ProgressBar value={p.progress} />
                     <span className="text-mist">Livraison prévue : {p.delivery}</span>
                   </div>
                 </div>
               </article>
+              </Reveal>
             ))}
           </div>
         </div>

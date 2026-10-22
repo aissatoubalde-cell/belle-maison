@@ -43,7 +43,7 @@ export default function Contact() {
         </div>
 
         <Reveal className="border-t border-gold/45 pt-14">
-          <div className="mx-auto flex w-full max-w-[720px] flex-col gap-8 border border-gold/45 px-6 py-10 sm:px-10">
+          <div className="mx-auto flex w-full max-w-[720px] flex-col gap-8 form-card bg-navy-light px-6 py-10 sm:px-10">
             <div className="flex flex-col items-center gap-3 text-center">
               <Eyebrow tone="light">Formulaire</Eyebrow>
               <h3 className="m-0 font-serif text-[1.8rem] font-normal">Décrivez-nous votre projet.</h3>

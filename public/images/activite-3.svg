@@ -1,4 +1,4 @@
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200' fill='none' stroke='#B8975A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+<svg xmlns='http://www.w3.org/2000/svg' width='400' height='200' viewBox='0 0 400 200' fill='none' stroke='#B8975A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
 <line x1='20' y1='170' x2='380' y2='170' stroke='#C4A468'/>
 <g fill='#F1EEE6'><rect x='40' y='90' width='70' height='80'/><rect x='110' y='60' width='60' height='110'/><rect x='170' y='100' width='70' height='70'/><rect x='240' y='45' width='55' height='125'/><rect x='295' y='85' width='65' height='85'/></g>
 <g fill='white'><rect x='52' y='102' width='14' height='14'/><rect x='82' y='102' width='14' height='14'/><rect x='52' y='130' width='14' height='14'/><rect x='82' y='130' width='14' height='14'/>

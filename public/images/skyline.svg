@@ -1,4 +1,4 @@
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 320' fill='none' stroke='#C4A468' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+<svg xmlns='http://www.w3.org/2000/svg' width='1600' height='320' viewBox='0 0 1600 320' fill='none' stroke='#C4A468' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
 <defs><linearGradient id='g' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#C4A468' stop-opacity='0.28'/><stop offset='1' stop-color='#C4A468' stop-opacity='0.04'/></linearGradient></defs>
 <path d='M0 290h1600' stroke-opacity='0.8'/>
 <g fill='url(#g)'>

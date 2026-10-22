@@ -24,7 +24,7 @@ export default function Hero() {
       </Container>
       <Container>
         <Reveal delay={0.3}>
-        <Image src="/images/skyline.svg" alt="" width={1600} height={320} unoptimized className="block h-auto w-full" />
+        <Image src="/images/skyline.svg" alt="" width={1600} height={320} unoptimized priority className="block h-auto w-full" />
         </Reveal>
       </Container>
     </section>

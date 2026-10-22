@@ -11,11 +11,11 @@ export default function Activites() {
         <div className="grid gap-7 [grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr))]">
           {activites.map((a, i) => (
             <Reveal key={a.title} delay={i * 0.08}>
-              <article className="card-hover flex h-full flex-col border border-gold/45 bg-white">
+              <article className="card-hover flex h-full flex-col border border-transparent bg-navy text-ivory">
               <Image src={a.image} alt="" width={400} height={200} unoptimized className="block h-[200px] w-full object-contain px-6 pt-6" />
               <div className="flex flex-col gap-2.5 px-7 pt-5 pb-8">
                 <h3 className="m-0 font-serif text-[1.6rem] font-normal">{a.title}</h3>
-                <p className="m-0 text-[0.95rem] text-muted">{a.text}</p>
+                <p className="m-0 text-[0.95rem] text-mist">{a.text}</p>
               </div>
             </article>
             </Reveal>

@@ -46,7 +46,22 @@ export default function ContactForm() {
         </div>
         <div className="flex flex-col gap-1.5">
           <label htmlFor="phone" className={label}>Téléphone (optionnel)</label>
-          <input id="phone" type="tel" autoComplete="tel" className={field} {...register("phone")} />
+          <input
+            id="phone"
+            type="tel"
+            inputMode="tel"
+            autoComplete="tel"
+            placeholder="+224 6XX XX XX XX"
+            className={field}
+            {...register("phone", {
+              onChange: (e) => {
+                // Ne garde que les chiffres, les espaces et un « + » en tête
+                const v = e.target.value as string;
+                e.target.value = (v.startsWith("+") ? "+" : "") + v.replace(/[^\d ]/g, "").replace(/ {2,}/g, " ");
+              },
+            })}
+          />
+          {errors.phone && <p className="m-0 text-[0.8rem] text-gold-light">{errors.phone.message}</p>}
         </div>
         <div className="flex flex-col gap-1.5">
           <label htmlFor="subject" className={label}>Objet</label>

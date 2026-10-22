@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { useEffect, useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { contactSchema, subjectLabels, type ContactInput } from "@/lib/contact-schema";
@@ -17,6 +17,13 @@ export default function ContactForm() {
     resolver: zodResolver(contactSchema),
     defaultValues: { subject: "construction" },
   });
+
+  // Le message de confirmation disparaît de lui-même après 6 secondes
+  useEffect(() => {
+    if (status?.type !== "ok") return;
+    const timer = setTimeout(() => setStatus(null), 6000);
+    return () => clearTimeout(timer);
+  }, [status]);
 
   const onSubmit = (data: ContactInput) => {
     setStatus(null);

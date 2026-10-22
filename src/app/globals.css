@@ -15,8 +15,8 @@
   --color-sand: #f1eee6;
   --color-stone: #c9c6bc;
 
-  --font-sans: var(--font-montserrat), sans-serif;
-  --font-serif: var(--font-bodoni), serif;
+  --font-sans: var(--font-inter), sans-serif;
+  --font-serif: var(--font-playfair), serif;
 }
 
 @layer base {
@@ -25,7 +25,7 @@
   }
 
   section {
-    scroll-margin-top: 16px;
+    scroll-margin-top: 120px;
   }
 
   body {

@@ -13,7 +13,7 @@ Ouvrir http://localhost:3001 (le port 3001 est fixé dans le script `dev` pour �
 
 ## Structure
 
-- `src/app/layout.tsx` — polices (Bodoni Moda, Montserrat via `next/font`), métadonnées SEO.
+- `src/app/layout.tsx` — polices (Playfair Display, Inter via `next/font`), métadonnées SEO.
 - `src/app/globals.css` — tokens de couleur du design (navy, ivoire, or…) déclarés dans `@theme`.
 - `src/app/page.tsx` — assemble les sections.
 - `src/components/` — un composant par section (Header, Hero, About, …, Footer) + `ui.tsx` (Container, Eyebrow, Button…).

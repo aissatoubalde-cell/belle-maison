@@ -8,7 +8,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="border-b border-gold/45 bg-ivory">
+    <header className="sticky top-0 z-50 border-b border-gold/45 bg-ivory/90 backdrop-blur-md supports-[backdrop-filter]:bg-ivory/80">
       <nav aria-label="Navigation principale" className="mx-auto flex max-w-[1240px] flex-wrap items-center justify-between gap-x-8 gap-y-3 px-6 py-3 lg:flex-nowrap">
         <a href="#accueil" aria-label="Belle Maison Properties – accueil" className="block">
           <Image src="/images/logo.png" alt="Belle Maison Properties S.A" width={890} height={490} priority className="h-auto w-[140px] shrink-0" />

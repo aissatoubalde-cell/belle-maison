@@ -9,9 +9,9 @@ export default function Header() {
 
   return (
     <header className="border-b border-gold/45 bg-ivory">
-      <nav aria-label="Navigation principale" className="mx-auto flex max-w-[1240px] flex-wrap items-center justify-between gap-x-8 gap-y-4 px-6 py-3.5">
+      <nav aria-label="Navigation principale" className="mx-auto flex max-w-[1240px] flex-wrap items-center justify-between gap-x-8 gap-y-3 px-6 py-3 lg:flex-nowrap">
         <a href="#accueil" aria-label="Belle Maison Properties – accueil" className="block">
-          <Image src="/images/logo.png" alt="Belle Maison Properties S.A" width={150} height={40} priority className="h-auto w-[150px]" />
+          <Image src="/images/logo.png" alt="Belle Maison Properties S.A" width={890} height={490} priority className="h-auto w-[140px] shrink-0" />
         </a>
 
         <button
@@ -29,14 +29,14 @@ export default function Header() {
 
         <div
           id="menu-principal"
-          className={`${open ? "flex" : "hidden"} w-full flex-col gap-2 pb-2 text-[0.85rem] font-semibold uppercase tracking-[0.08em] lg:flex lg:w-auto lg:flex-row lg:flex-wrap lg:items-center lg:gap-x-7 lg:gap-y-2 lg:pb-0`}
+          className={`${open ? "flex" : "hidden"} w-full flex-col gap-2 pb-2 text-[0.85rem] font-semibold uppercase tracking-[0.08em] lg:flex lg:w-auto lg:flex-1 lg:flex-row lg:flex-wrap lg:items-center lg:justify-end lg:gap-x-5 lg:gap-y-1 lg:pb-0 lg:text-[0.78rem] xl:flex-nowrap xl:gap-x-6 xl:text-[0.82rem]`}
         >
           {nav.map((item) => (
             <a key={item.href} href={item.href} onClick={() => setOpen(false)} className="py-2.5 no-underline">
               {item.label}
             </a>
           ))}
-          <a href="#contact" onClick={() => setOpen(false)} className="bg-navy px-[22px] py-3 text-center text-ivory no-underline hover:text-gold-light">
+          <a href="#contact" onClick={() => setOpen(false)} className="bg-navy px-[22px] py-3 text-center text-ivory no-underline hover:text-gold-light lg:ml-2 lg:whitespace-nowrap lg:px-4">
             Nous contacter
           </a>
         </div>

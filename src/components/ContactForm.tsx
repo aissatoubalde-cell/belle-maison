@@ -60,7 +60,7 @@ export default function ContactForm() {
       </div>
       <div className="flex flex-col gap-1.5">
         <label htmlFor="message" className={label}>Votre projet</label>
-        <textarea id="message" rows={5} className={field} {...register("message")} />
+        <textarea id="message" rows={4} className={field} {...register("message")} />
         {errors.message && <p className="m-0 text-[0.8rem] text-gold-light">{errors.message.message}</p>}
       </div>
 
@@ -73,7 +73,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={pending}
-        className="self-start bg-gold px-7 py-4 text-[0.9rem] font-semibold tracking-[0.08em] text-navy uppercase transition-colors hover:bg-gold-light disabled:opacity-60"
+        className="self-center bg-gold px-10 py-4 text-[0.9rem] font-semibold tracking-[0.08em] text-navy uppercase transition-colors hover:bg-gold-light disabled:opacity-60"
       >
         {pending ? "Envoi en cours…" : "Envoyer ma demande"}
       </button>

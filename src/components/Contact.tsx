@@ -42,12 +42,15 @@ export default function Contact() {
         </div>
         </div>
 
-        <Reveal className="flex flex-col gap-7 border-t border-gold/45 pt-14">
-          <div className="flex flex-col gap-3">
-            <Eyebrow tone="light">Formulaire</Eyebrow>
-            <h3 className="m-0 font-serif text-[1.8rem] font-normal">Décrivez-nous votre projet.</h3>
+        <Reveal className="border-t border-gold/45 pt-14">
+          <div className="mx-auto flex w-full max-w-[720px] flex-col gap-8 border border-gold/45 px-6 py-10 sm:px-10">
+            <div className="flex flex-col items-center gap-3 text-center">
+              <Eyebrow tone="light">Formulaire</Eyebrow>
+              <h3 className="m-0 font-serif text-[1.8rem] font-normal">Décrivez-nous votre projet.</h3>
+              <p className="m-0 max-w-[480px] text-[0.95rem] text-mist">Quelques lignes suffisent : nous vous recontactons sous 48 heures ouvrées.</p>
+            </div>
+            <ContactForm />
           </div>
-          <ContactForm />
         </Reveal>
       </Container>
     </section>

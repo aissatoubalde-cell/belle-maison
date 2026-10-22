@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { clients, typesPartenaires } from "@/data/site";
+import { clients } from "@/data/site";
+import PartnerMarquee from "./PartnerMarquee";
 import { Container, SectionHeader } from "./ui";
 import Reveal from "./Reveal";
 
@@ -13,13 +14,9 @@ export default function Partenaires() {
           </p>
         </SectionHeader>
 
-        <ul className="m-0 grid list-none gap-4 p-0 [grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr))]">
-          {typesPartenaires.map((t, i) => (
-            <li key={t}>
-              <Reveal delay={i * 0.06} className="card-hover h-full border gold-border px-6 py-[22px] font-serif text-[1.25rem]">{t}</Reveal>
-            </li>
-          ))}
-        </ul>
+        <Reveal>
+          <PartnerMarquee />
+        </Reveal>
 
         <div className="flex flex-col gap-[22px]">
           <div className="flex items-center gap-[18px]">

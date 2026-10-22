@@ -2,6 +2,7 @@ import { contact } from "@/data/site";
 import { Button, Container, Eyebrow } from "./ui";
 import ContactForm from "./ContactForm";
 import Reveal from "./Reveal";
+import AnimatedWords from "./AnimatedWords";
 
 const iconProps = { "aria-hidden": true, width: 24, height: 24, viewBox: "0 0 24 24", fill: "none", stroke: "#C4A468", strokeWidth: 1.6, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
 
@@ -12,7 +13,7 @@ export default function Contact() {
         <div className="flex flex-wrap items-center gap-x-20 gap-y-14">
         <div className="flex min-w-0 flex-[999_1_460px] flex-col gap-[22px]">
           <Eyebrow tone="light">Contact</Eyebrow>
-          <h2 className="m-0 font-serif text-[clamp(2.2rem,4.5vw,3.4rem)] font-normal leading-[1.12]">Parlons de votre projet.</h2>
+          <h2 className="m-0 font-serif text-[clamp(2.2rem,4.5vw,3.4rem)] font-normal leading-[1.12]"><AnimatedWords text="Parlons de votre projet." stagger={0.08} /></h2>
           <p className="m-0 max-w-[560px] text-mist">
             Construction, travaux, promotion ou investissement immobilier : notre équipe étudie chaque demande avec attention.
           </p>

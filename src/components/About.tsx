@@ -1,5 +1,7 @@
 import { Container, Eyebrow } from "./ui";
 import Reveal from "./Reveal";
+import AnimatedWords from "./AnimatedWords";
+import { GrowLine } from "./GrowLine";
 
 export default function About() {
   return (
@@ -8,9 +10,9 @@ export default function About() {
         <Reveal className="flex flex-col gap-5">
           <Eyebrow>01 · Présentation</Eyebrow>
           <h2 className="m-0 font-serif text-[clamp(2rem,3.4vw,2.9rem)] font-normal leading-[1.15] text-balance">
-            Une approche intégrée, du projet à la valorisation du patrimoine.
+            <AnimatedWords text="Une approche intégrée, du projet à la valorisation du patrimoine." delay={0.1} />
           </h2>
-          <div className="h-0.5 w-24 bg-gold" />
+          <GrowLine />
         </Reveal>
 
         <Reveal delay={0.15} className="flex flex-col gap-5 text-[1.05rem] leading-[1.75] text-ink md:pt-9">

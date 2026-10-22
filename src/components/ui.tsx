@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import Reveal from "./Reveal";
+import AnimatedWords from "./AnimatedWords";
 
 export function Container({ children, className = "" }: { children: ReactNode; className?: string }) {
   return <div className={`mx-auto max-w-[1240px] px-6 ${className}`}>{children}</div>;
@@ -11,7 +12,11 @@ export function Eyebrow({ children, tone = "dark" }: { children: ReactNode; tone
 
 export function SectionTitle({ children, size = "lg" }: { children: ReactNode; size?: "lg" | "md" }) {
   const sizes = size === "lg" ? "text-[clamp(2rem,4vw,3rem)]" : "text-[clamp(1.8rem,3.4vw,2.5rem)]";
-  return <h2 className={`m-0 font-serif font-normal leading-[1.15] ${sizes}`}>{children}</h2>;
+  return (
+    <h2 className={`m-0 font-serif font-normal leading-[1.15] ${sizes}`}>
+      {typeof children === "string" ? <AnimatedWords text={children} delay={0.1} /> : children}
+    </h2>
+  );
 }
 
 export function SectionHeader({ eyebrow, title, tone = "dark", children }: { eyebrow: ReactNode; title: ReactNode; tone?: "dark" | "light"; children?: ReactNode }) {

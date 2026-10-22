@@ -14,7 +14,7 @@ export default function Partenaires() {
           </p>
         </SectionHeader>
 
-        <Reveal>
+        <Reveal className="relative left-1/2 w-screen -translate-x-1/2">
           <PartnerMarquee />
         </Reveal>
 

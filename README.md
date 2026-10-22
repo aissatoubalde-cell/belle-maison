@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Belle Maison Properties S.A — Site vitrine
 
-## Getting Started
+Site one-page construit avec **Next.js 16 (App Router)**, **React 19**, **TypeScript** et **Tailwind CSS v4**.
 
-First, run the development server:
+## Démarrer
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ouvrir http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `src/app/layout.tsx` — polices (Bodoni Moda, Montserrat via `next/font`), métadonnées SEO.
+- `src/app/globals.css` — tokens de couleur du design (navy, ivoire, or…) déclarés dans `@theme`.
+- `src/app/page.tsx` — assemble les sections.
+- `src/components/` — un composant par section (Header, Hero, About, …, Footer) + `ui.tsx` (Container, Eyebrow, Button…).
+- `src/data/site.ts` — **tout le contenu éditable** : navigation, activités, réalisations, projets en cours, marchés, valeurs, partenaires, coordonnées.
+- `public/images/` — images. Les fichiers actuels sont des **placeholders** à remplacer par les vrais visuels (mêmes noms de fichiers).
 
-## Learn More
+## Remplacer les images
 
-To learn more about Next.js, take a look at the following resources:
+| Fichier | Contenu attendu |
+| --- | --- |
+| `logo.png` | Logo (≈ 150 px de large à l’affichage) |
+| `favicon.png` | Favicon |
+| `skyline.png` | Illustration skyline du hero |
+| `activite-1.png` … `activite-6.png` | Illustrations des 6 activités |
+| `partenaire-fvg.png`, `partenaire-eltg.png`, `partenaire-bvit.png` | Logos partenaires |
+| `qr-contact.svg` | QR code de la carte de contact |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Pour les réalisations et projets en cours, ajouter un champ `image: "/images/xxx.jpg"` dans `src/data/site.ts` : le placeholder en pointillés disparaît automatiquement.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Librairies ajoutées
 
-## Deploy on Vercel
+| Librairie | Rôle | Où |
+| --- | --- | --- |
+| `motion` (Framer Motion) | Apparition en fondu des sections et cartes au scroll | `src/components/Reveal.tsx` |
+| `react-hook-form` + `@hookform/resolvers` | Gestion du formulaire de contact | `src/components/ContactForm.tsx` |
+| `zod` | Schéma de validation partagé client / serveur | `src/lib/contact-schema.ts` |
+| `resend` | Envoi de l’e-mail depuis une Server Action | `src/app/actions/contact.ts` |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Configurer l’envoi d’e-mails (Resend)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Créer un compte sur https://resend.com et générer une clé API.
+2. Copier `.env.example` vers `.env.local` et renseigner :
+   - `RESEND_API_KEY` : la clé générée.
+   - `CONTACT_FROM` : l’expéditeur. En test, `onboarding@resend.dev` fonctionne sans configuration ; en production, vérifier le domaine (ex. `contact@bellemaison.gn`) dans Resend.
+   - `CONTACT_TO` : l’adresse qui reçoit les demandes.
+3. Redémarrer `npm run dev`.
+
+Sans clé valide, le formulaire affiche un message d’erreur propre et l’erreur détaillée apparaît dans la console serveur.
+
+> Note : `.npmrc` contient `legacy-peer-deps=true` à cause d’un conflit de peer dependency optionnelle (`effect`) dans `@hookform/resolvers` 6. Il n’affecte pas le projet.
+
+## SEO : sitemap et robots
+
+`src/app/sitemap.ts` et `src/app/robots.ts` génèrent `/sitemap.xml` et `/robots.txt`. Ils lisent le domaine dans `NEXT_PUBLIC_SITE_URL` (`.env.local`). **Remplacer `https://www.example.com` par le vrai domaine avant la mise en ligne**, puis soumettre `https://votre-domaine/sitemap.xml` dans Google Search Console. Quand vous ajouterez des pages, ajoutez-les dans le tableau de `sitemap.ts`.

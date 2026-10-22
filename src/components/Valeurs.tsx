@@ -16,10 +16,10 @@ export default function Valeurs() {
     <section id="valeurs" className="bg-ivory">
       <Container className="flex flex-col gap-12 py-26">
         <SectionHeader eyebrow="07 · Nos valeurs" title="Des relations fondées sur la confiance." />
-        <div className="grid gap-x-12 gap-y-10 [grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))]">
+        <div className="grid gap-7 [grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))]">
           {valeurs.map((v, i) => (
-            <Reveal key={v.title} delay={i * 0.08}>
-              <div className="flex flex-col gap-3">
+            <Reveal key={v.title} delay={i * 0.08} className="h-full">
+              <div className="card-hover flex h-full flex-col gap-3 rounded-lg border border-transparent bg-white p-8 shadow-[0_12px_30px_-12px_rgba(31,61,111,0.18)]">
               <svg aria-hidden="true" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#B8975A" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
                 {icons[v.icon]}
               </svg>

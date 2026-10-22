@@ -14,18 +14,20 @@ export function SectionTitle({ children, size = "lg" }: { children: ReactNode; s
   const sizes = size === "lg" ? "text-[clamp(2rem,4vw,3rem)]" : "text-[clamp(1.8rem,3.4vw,2.5rem)]";
   return (
     <h2 className={`m-0 font-serif font-normal leading-[1.15] ${sizes}`}>
-      {typeof children === "string" ? <AnimatedWords text={children} delay={0.1} /> : children}
+      {typeof children === "string" ? <AnimatedWords text={children} delay={0.15} /> : children}
     </h2>
   );
 }
 
 export function SectionHeader({ eyebrow, title, tone = "dark", children }: { eyebrow: ReactNode; title: ReactNode; tone?: "dark" | "light"; children?: ReactNode }) {
   return (
-    <Reveal className="flex max-w-[760px] flex-col gap-3.5">
-      <Eyebrow tone={tone}>{eyebrow}</Eyebrow>
+    <div className="flex max-w-[760px] flex-col gap-3.5">
+      <Reveal>
+        <Eyebrow tone={tone}>{eyebrow}</Eyebrow>
+      </Reveal>
       <SectionTitle>{title}</SectionTitle>
-      {children}
-    </Reveal>
+      {children ? <Reveal delay={0.45}>{children}</Reveal> : null}
+    </div>
   );
 }
 

@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 type Props = { text: string; delay?: number; stagger?: number; className?: string };
 
 /** Fait apparaître un texte mot par mot (glissement vers le haut) quand il entre dans le viewport. */
-export default function AnimatedWords({ text, delay = 0, stagger = 0.045, className }: Props) {
+export default function AnimatedWords({ text, delay = 0, stagger = 0.07, className }: Props) {
   const words = text.split(" ");
   return (
     <span className={className} aria-label={text} role="text">
@@ -16,8 +16,8 @@ export default function AnimatedWords({ text, delay = 0, stagger = 0.045, classN
               className="inline-block"
               initial={{ y: "105%", opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: delay + i * stagger }}
+              viewport={{ once: true, amount: 0.6 }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: delay + i * stagger }}
             >
               {word}
             </motion.span>

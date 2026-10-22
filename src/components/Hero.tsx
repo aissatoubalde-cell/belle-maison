@@ -9,7 +9,7 @@ export default function Hero() {
       <Container className="flex flex-col gap-7 pt-24 pb-10">
         <Reveal className="eyebrow text-gold">Construction · BTP · Infrastructures · Immobilier</Reveal>
         <h1 className="m-0 max-w-[900px] font-serif text-[clamp(2.5rem,6vw,4.75rem)] font-normal leading-[1.08]">
-          <AnimatedWords text="Construisons ensemble vos projets de demain." delay={0.15} stagger={0.08} />
+          <AnimatedWords text="Construisons ensemble vos projets de demain." delay={0.2} stagger={0.1} />
         </h1>
         <Reveal delay={0.24}>
           <p className="m-0 max-w-[640px] font-serif text-[clamp(1.2rem,2.2vw,1.6rem)] italic leading-[1.45] text-gold-light">

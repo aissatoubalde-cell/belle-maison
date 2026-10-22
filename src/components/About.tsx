@@ -1,18 +1,21 @@
-import { Container, Eyebrow, SectionTitle } from "./ui";
+import { Container, Eyebrow } from "./ui";
 import Reveal from "./Reveal";
 
 export default function About() {
   return (
     <section id="apropos" className="bg-ivory">
-      <Container className="flex flex-wrap gap-x-[72px] gap-y-12 py-26">
-        <Reveal className="flex flex-[1_1_320px] flex-col gap-[18px]">
+      <Container className="grid items-start gap-12 py-26 md:grid-cols-2 md:gap-16 lg:grid-cols-[5fr_7fr] lg:gap-24">
+        <Reveal className="flex flex-col gap-5">
           <Eyebrow>01 · Présentation</Eyebrow>
-          <SectionTitle>Une approche intégrée, du projet à la valorisation du patrimoine.</SectionTitle>
+          <h2 className="m-0 font-serif text-[clamp(2rem,3.4vw,2.9rem)] font-normal leading-[1.15] text-balance">
+            Une approche intégrée, du projet à la valorisation du patrimoine.
+          </h2>
           <div className="h-0.5 w-24 bg-gold" />
         </Reveal>
-        <Reveal delay={0.15} className="flex min-w-0 flex-[999_1_480px] flex-col gap-[18px] text-[1.05rem] text-ink">
+
+        <Reveal delay={0.15} className="flex flex-col gap-5 text-[1.05rem] leading-[1.75] text-ink md:pt-9">
           <p className="m-0">
-            <strong>BELLE MAISON PROPERTIES S.A</strong> est une société à vocation entrepreneuriale et d’investissement, orientée vers la construction, le Bâtiment et les Travaux Publics (BTP), le développement des infrastructures et les activités immobilières.
+            <strong className="text-navy">BELLE MAISON PROPERTIES S.A</strong> est une société à vocation entrepreneuriale et d’investissement, orientée vers la construction, le Bâtiment et les Travaux Publics (BTP), le développement des infrastructures et les activités immobilières.
           </p>
           <p className="m-0">
             Nous accompagnons particuliers, entreprises, investisseurs et institutions publiques ou privées dans des projets de construction et d’aménagement : développement de projets, bâtiments, infrastructures, promotion immobilière et valorisation du patrimoine.

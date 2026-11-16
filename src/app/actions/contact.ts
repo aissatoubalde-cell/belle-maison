@@ -1,6 +1,5 @@
 "use server";
 
-import { Resend } from "resend";
 import { contactSchema, subjectLabels, type ContactInput } from "@/lib/contact-schema";
 
 export type ContactResult = { ok: true } | { ok: false; error: string };
@@ -11,34 +10,39 @@ export async function sendContact(input: ContactInput): Promise<ContactResult> {
     return { ok: false, error: "Le formulaire contient des erreurs." };
   }
 
-  const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.CONTACT_TO;
-  const from = process.env.CONTACT_FROM;
-  if (!apiKey || !to || !from) {
-    console.error("Variables RESEND_API_KEY / CONTACT_TO / CONTACT_FROM manquantes dans .env.local");
+  const accessKey = process.env.WEB3FORMS_ACCESS_KEY;
+  if (!accessKey) {
+    console.error("Variable WEB3FORMS_ACCESS_KEY manquante dans .env.local");
     return { ok: false, error: "L’envoi d’e-mail n’est pas encore configuré. Contactez-nous directement par téléphone ou e-mail." };
   }
 
   const { name, email, phone, subject, message } = parsed.data;
-  const resend = new Resend(apiKey);
-  const { error } = await resend.emails.send({
-    from,
-    to,
-    replyTo: email,
-    subject: `[Site web] ${subjectLabels[subject]} — ${name}`,
-    text: [
-      `Nom : ${name}`,
-      `E-mail : ${email}`,
-      `Téléphone : ${phone || "—"}`,
-      `Objet : ${subjectLabels[subject]}`,
-      "",
-      message,
-    ].join("\n"),
-  });
 
-  if (error) {
-    console.error("Resend error:", error);
+  try {
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({
+        access_key: accessKey,
+        from_name: "Belle Maison Properties — Site web",
+        subject: `[Site web] ${subjectLabels[subject]} — ${name}`,
+        replyto: email,
+        name,
+        email,
+        phone: phone || "—",
+        objet: subjectLabels[subject],
+        message,
+      }),
+    });
+    const data = (await res.json()) as { success?: boolean; message?: string };
+    if (!res.ok || !data.success) {
+      console.error("Web3Forms error:", data);
+      return { ok: false, error: "L’envoi a échoué. Veuillez réessayer ou nous appeler." };
+    }
+  } catch (err) {
+    console.error("Web3Forms error:", err);
     return { ok: false, error: "L’envoi a échoué. Veuillez réessayer ou nous appeler." };
   }
+
   return { ok: true };
 }

@@ -50,7 +50,7 @@ export default function Contact() {
               <h3 className="m-0 font-serif text-[1.8rem] font-normal">Décrivez-nous votre projet.</h3>
               <p className="m-0 max-w-[480px] text-[0.95rem] text-mist">Quelques lignes suffisent : nous vous recontactons sous 48 heures ouvrées.</p>
             </div>
-            <ContactForm />
+            <ContactForm accessKey={process.env.WEB3FORMS_ACCESS_KEY} />
           </div>
         </Reveal>
       </Container>

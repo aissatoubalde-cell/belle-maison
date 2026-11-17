@@ -34,9 +34,16 @@ export async function sendContact(input: ContactInput): Promise<ContactResult> {
         message,
       }),
     });
-    const data = (await res.json()) as { success?: boolean; message?: string };
+    const raw = await res.text();
+    let data: { success?: boolean; message?: string } = {};
+    try {
+      data = JSON.parse(raw);
+    } catch {
+      console.error("Web3Forms : réponse non JSON", res.status, res.headers.get("content-type"), raw.slice(0, 600));
+      return { ok: false, error: "L’envoi a échoué. Veuillez réessayer ou nous appeler." };
+    }
     if (!res.ok || !data.success) {
-      console.error("Web3Forms error:", data);
+      console.error("Web3Forms error:", res.status, data);
       return { ok: false, error: "L’envoi a échoué. Veuillez réessayer ou nous appeler." };
     }
   } catch (err) {

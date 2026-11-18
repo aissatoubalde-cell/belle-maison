@@ -4,52 +4,13 @@ import { useEffect, useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { contactSchema, subjectLabels, type ContactInput } from "@/lib/contact-schema";
+import { sendContact } from "@/app/actions/contact";
 
 const field =
   "w-full border border-ivory/15 bg-navy px-4 py-3 transition-colors text-ivory placeholder:text-mist/60 focus:border-gold focus:outline-none";
 const label = "text-[0.75rem] font-semibold tracking-[0.2em] uppercase text-gold";
 
-const ERROR_SEND = "L’envoi a échoué. Veuillez réessayer ou nous appeler.";
-const ERROR_CONFIG = "L’envoi d’e-mail n’est pas encore configuré. Contactez-nous directement par téléphone ou e-mail.";
-
-/**
- * Envoi direct depuis le navigateur vers Web3Forms (usage prévu par le service).
- * Un envoi depuis le serveur Vercel est bloqué par la protection Cloudflare de Web3Forms.
- * La clé d'accès Web3Forms est conçue pour être exposée côté client : elle n'autorise
- * que l'envoi vers l'adresse pour laquelle elle a été créée.
- */
-async function sendToWeb3Forms(accessKey: string, data: ContactInput): Promise<boolean> {
-  const { name, email, phone, subject, message } = data;
-  try {
-    const res = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify({
-        access_key: accessKey,
-        from_name: "Belle Maison Properties — Site web",
-        subject: `[Site web] ${subjectLabels[subject]} — ${name}`,
-        replyto: email,
-        name,
-        email,
-        phone: phone || "—",
-        objet: subjectLabels[subject],
-        message,
-        botcheck: "",
-      }),
-    });
-    const json = (await res.json()) as { success?: boolean; message?: string };
-    if (!res.ok || !json.success) {
-      console.error("Web3Forms error:", res.status, json);
-      return false;
-    }
-    return true;
-  } catch (err) {
-    console.error("Web3Forms error:", err);
-    return false;
-  }
-}
-
-export default function ContactForm({ accessKey }: { accessKey?: string }) {
+export default function ContactForm() {
   const [status, setStatus] = useState<{ type: "ok" | "error"; text: string } | null>(null);
   const [pending, startTransition] = useTransition();
   const { register, handleSubmit, reset, formState: { errors } } = useForm<ContactInput>({
@@ -66,17 +27,13 @@ export default function ContactForm({ accessKey }: { accessKey?: string }) {
 
   const onSubmit = (data: ContactInput) => {
     setStatus(null);
-    if (!accessKey) {
-      setStatus({ type: "error", text: ERROR_CONFIG });
-      return;
-    }
     startTransition(async () => {
-      const ok = await sendToWeb3Forms(accessKey, data);
-      if (ok) {
+      const res = await sendContact(data);
+      if (res.ok) {
         reset();
         setStatus({ type: "ok", text: "Merci, votre demande a bien été envoyée. Nous revenons vers vous rapidement." });
       } else {
-        setStatus({ type: "error", text: ERROR_SEND });
+        setStatus({ type: "error", text: res.error });
       }
     });
   };
